@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Recipe Book</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Header Section -->
+  <section class="sub-header">
+    <nav>
+      <a href="index.html">
+        <img src="cookbook.png" alt="" /></a>
+        <h3>Naha's Recipes</h3>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="recipe.html">Recipes</a></li>
+          <li><a href="add new recipe.html"> Add Recipe</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
+  <section id="addRecipeSection">
+  <h2>Add New Recipe</h2>
+  <form id="addRecipeForm">
+    <input type="text" id="recipeName" placeholder="Recipe Name" required />
+    <input type="text" id="recipeImage" placeholder="Image Path (e.g., images/dosa.jpg)" required />
+    <input type="text" id="recipeCategory" placeholder="Category (e.g., Indian)" required />
+    <input type="text" id="recipeSubcategory" placeholder="Subcategory (e.g., South Indian)" required />
+    <textarea id="recipeIngredients" placeholder="Ingredients (comma separated)" required></textarea>
+    <textarea id="recipeSteps" placeholder="Steps (comma separated)" required></textarea>
+    <button type="submit">Add Recipe</button>
+  </form>
+</section>
+<!------- Footer -------->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Welcome to the our Recipe Book</p>
+        <div class="social-icons">                                                    
+            <a href="" target="_blank"><img src="instagram.png" alt=""></i></a>
+            <a href="" target="_blank"><img src="social.png" alt=""></i></a>
+            <a href="" target="_blank"><img src="facebook.png" alt=""></i></a>
+            <a href="" target="_blank"><img src="twitter.png" alt=""></i></a>
+          </div>
+
+        
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+</html> 
