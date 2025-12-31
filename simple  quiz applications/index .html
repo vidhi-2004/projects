@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front-End Mastery Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Front-End Mastery Quiz</h1>
+    <p>Test your HTML, CSS & JavaScript skills!</p>
+
+    <!-- Section Selection -->
+    <div id="section-selection">
+      <div class="section-card" data-section="html">HTML Quiz</div>
+      <div class="section-card" data-section="css">CSS Quiz</div>
+      <div class="section-card" data-section="js">JavaScript Quiz</div>
+    </div>
+
+    <!-- Quiz Area -->
+    <div id="quiz-area" class="hide">
+      <div class="progress">
+        <span id="progress-text">Question 1 of 10</span>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+
+      <h2 id="section-title">HTML Quiz</h2>
+      <div class="question">
+        <h3 id="question-text"></h3>
+        <div class="options" id="options"></div>
+      </div>
+
+      <button id="next-btn" disabled>Next Question</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result" class="hide">
+      <h2>Quiz Completed!</h2>
+      <div id="final-score"></div>
+      <button onclick="location.reload()" class="restart-btn">Restart Quiz</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

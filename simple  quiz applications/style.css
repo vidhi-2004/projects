@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  color: white;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  max-width: 750px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glassmorphism Cards */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #fff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.4); }
+  to { text-shadow: 0 0 40px rgba(167, 139, 250, 0.8); }
+}
+
+p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 50px;
+  font-weight: 500;
+}
+
+/* Section Selection Cards */
+#section-selection {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.section-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 35px 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  min-width: 200px;
+  transition: all 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.section-card:hover::before {
+  opacity: 1;
+}
+
+.section-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Quiz Area */
+#quiz-area {
+  background: rgba(255, 255, 255, 0.18);
+   
+  padding: 50px;
+  border-radius: 25px;
+  margin-top: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#section-title {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+/* Progress Bar - Neon Style */
+.progress {
+  margin-bottom: 35px;
+}
+
+.progress-bar {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #00f5ff, #00ff88);
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ff88;
+  transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#progress-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Questions & Options */
+.question h3 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: white;
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.options label {
+  display: block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 18px 20px;
+  margin: 12px 0;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  color: white;
+  font-size: 17px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+}
+
+.options label:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #a78bfa;
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.options input[type="radio"] {
+  margin-right: 15px;
+  transform: scale(1.4);
+  accent-color: #a78bfa;
+}
+
+/* Buttons */
+#next-btn, .restart-btn {
+  padding: 16px 50px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#next-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+#next-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+}
+
+#next-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.restart-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+}
+
+.restart-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.5);
+}
+
+/* Result Screen */
+#result {
+  animation: fadeIn 1s ease;
+}
+
+#final-score {
+  font-size: 26px;
+  line-height: 2;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.hide { display: none; }
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  h1 { font-size: 36px; }
+  .section-card { padding: 25px 35px; font-size: 20px; }
+  #quiz-area { padding: 30px; }
+  .options label { padding: 16px; font-size: 16px; }
+}
